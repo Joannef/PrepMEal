@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Current Week-->
+        <!--Weekly Calendar View Controller-->
         <scene sceneID="Q3q-dp-15D">
             <objects>
                 <tableViewController id="qCv-qR-l5w" customClass="WeeklyCalendarViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" tag="3000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KSH-5x-z0j">
-                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="100" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -25,20 +25,20 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeeklyItem" id="lGh-gA-PZt">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lGh-gA-PZt" id="AUO-nr-YeA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2R-if-meA">
-                                            <rect key="frame" x="20" y="11" width="177" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="177" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euw-j6-JgD">
-                                            <rect key="frame" x="226" y="11" width="168" height="21"/>
+                                            <rect key="frame" x="226" y="11" width="168" height="21.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="168" id="JgQ-lb-5wU"/>
                                             </constraints>
@@ -73,7 +73,7 @@
                             <outlet property="delegate" destination="qCv-qR-l5w" id="NUl-nx-7WA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Current Week" id="V6h-Qv-gp5">
+                    <navigationItem key="navigationItem" id="V6h-Qv-gp5">
                         <barButtonItem key="backBarButtonItem" title="Weekly View" id="Ife-lw-gWE" userLabel="Weekly View"/>
                         <barButtonItem key="rightBarButtonItem" title="Clear Week" id="eQq-4q-EdS"/>
                     </navigationItem>
@@ -82,10 +82,10 @@
             </objects>
             <point key="canvasLocation" x="631.8840579710145" y="33.482142857142854"/>
         </scene>
-        <!--View Controller-->
+        <!--Day Item View Controller-->
         <scene sceneID="5Bj-VE-owq">
             <objects>
-                <viewController id="L4a-Hw-KGr" sceneMemberID="viewController">
+                <viewController id="L4a-Hw-KGr" customClass="DayItemViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tit-Ja-XcL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
