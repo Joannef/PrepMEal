@@ -14,7 +14,7 @@
 		BA7A485E255C7E6F001CF04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7A485D255C7E6F001CF04B /* Assets.xcassets */; };
 		BA7A4861255C7E6F001CF04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A485F255C7E6F001CF04B /* LaunchScreen.storyboard */; };
 		BA7A486A255CA0C3001CF04B /* WeeklyCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */; };
-		BAA3D5DB25785B0400B8DF6C /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3D5DA25785B0400B8DF6C /* SearchRecipeViewController.swift */; };
+		BA8B7DDD257869BA00B27F77 /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		BA7A4860255C7E6F001CF04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA7A4862255C7E6F001CF04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendarViewController.swift; sourceTree = "<group>"; };
-		BAA3D5DA25785B0400B8DF6C /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
+		BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				BA7A4858255C7E6A001CF04B /* DayItemViewController.swift */,
 				BA7A485A255C7E6A001CF04B /* Main.storyboard */,
 				BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */,
-				BAA3D5DA25785B0400B8DF6C /* SearchRecipeViewController.swift */,
+				BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */,
 				BA7A485D255C7E6F001CF04B /* Assets.xcassets */,
 				BA7A485F255C7E6F001CF04B /* LaunchScreen.storyboard */,
 				BA7A4862255C7E6F001CF04B /* Info.plist */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA7A4859255C7E6A001CF04B /* DayItemViewController.swift in Sources */,
-				BAA3D5DB25785B0400B8DF6C /* SearchRecipeViewController.swift in Sources */,
+				BA8B7DDD257869BA00B27F77 /* SearchRecipeViewController.swift in Sources */,
 				BA7A4855255C7E6A001CF04B /* AppDelegate.swift in Sources */,
 				BA7A4857255C7E6A001CF04B /* SceneDelegate.swift in Sources */,
 				BA7A486A255CA0C3001CF04B /* WeeklyCalendarViewController.swift in Sources */,
