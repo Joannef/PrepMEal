@@ -28,25 +28,71 @@ class SearchRecipeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    var searchResults = [SearchResult]()
+    var searchResults = [Recipes]()
     var hasSearched = false
+    
+    //MARK:- Helper Methods
+    func recipesURL(searchText: String) -> URL {
+        let urlString = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let apiURL = "https://api.spoonacular.com/recipes/complexSearch?query=\(urlString)&maxCalories=10000&addRecipeInformation=true&apiKey=29bb9b72616d4ed095d7339111a413bb&fbclid=IwAR0nj2ZGq68yIS6BRZRjPUEO4MeJZIKHoFy5u4gbdsAu0H5ywq_aMYWUzt4"
+        let url = URL(string: apiURL)
+        return url!
+    }
+    
+    func searchRequest(with url: URL) -> Data? {
+        do {
+            return try Data(contentsOf: url)
+        }
+        catch {
+            print("Download Error: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    func parse(data: Data) -> [Recipes] {
+        do {
+            let result = try JSONDecoder().decode(Result.self, from: data)
+            return result.results
+        }
+        catch {
+            print("JSON Error")
+            return []
+        }
+    }
 }
 
 extension SearchRecipeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        searchResults = []
-        if searchBar.text! != "other food" {
-            for i in 0...2 {
-                let searchResult = SearchResult()
-                searchResult.recipeName = String(format: "Fake Result %d for", i)
-                searchResult.recipeCalorie = searchBar.text!
-                searchResults.append(searchResult)
+        if !searchBar.text!.isEmpty{
+            searchBar.resignFirstResponder()
+            
+            hasSearched = true
+            searchResults = []
+            
+            let url = recipesURL(searchText: searchBar.text!)
+            
+            print("URL: '\(url)'")
+            
+            if let data = searchRequest(with: url) {
+                searchResults = parse(data: data)
+//                let results = parse(data: data)
+                print("Got results: \(searchResults)")
             }
+
+//            URLSession.shared.dataTask(with: (url)) { data, response, error in
+//                if error == nil && data != nil {
+//                    if let data = data {
+//                        let recipeSearchEntry = try? JSONDecoder().decode(Result.self, from: data)
+//
+//                        print(recipeSearchEntry ?? "Parse Failed")
+////                        searchResults = recipeSearchEntry
+//                    }
+//                }
+//            }.resume()
+            
+            tableView.reloadData()
         }
-        hasSearched = true
-        tableView.reloadData()
-//        print("The search text is: '\(searchBar.text!)'")
+        print("The search text is: '\(searchBar.text!)'")
+        print("Search Results is: '\(searchResults)'")
     }
 }
 
@@ -67,13 +113,11 @@ extension SearchRecipeViewController: UITableViewDelegate,
 
         if searchResults.count == 0 {
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
-//            cell.recipeNameLabel.text = "(Nothing found)"
-//            cell.calorieLabel.text = ""
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
-            let searchResult = searchResults[indexPath.row]
-            cell.recipeNameLabel.text = searchResult.recipeName
-            cell.calorieLabel.text = searchResult.recipeCalorie
+//            let searchResult = searchResults[indexPath.row]
+//            cell.recipeNameLabel.text = searchResults
+//            cell.calorieLabel.text = searchResults
             return cell
         }
     }

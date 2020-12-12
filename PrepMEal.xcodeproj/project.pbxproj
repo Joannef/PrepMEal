@@ -19,6 +19,7 @@
 		BAE5ADD32582F603004CB726 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD22582F603004CB726 /* SearchResultCell.xib */; };
 		BAE5ADD625841C9E004CB726 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */; };
 		BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */; };
+		BAE5ADEE25847A50004CB726 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADED25847A50004CB726 /* Nutrition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BAE5ADD22582F603004CB726 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		BAE5ADED25847A50004CB726 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				BA7A485D255C7E6F001CF04B /* Assets.xcassets */,
 				BA7A485F255C7E6F001CF04B /* LaunchScreen.storyboard */,
 				BA7A4862255C7E6F001CF04B /* Info.plist */,
+				BAE5ADED25847A50004CB726 /* Nutrition.swift */,
 			);
 			path = PrepMEal;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				BA7A4855255C7E6A001CF04B /* AppDelegate.swift in Sources */,
 				BA7A4857255C7E6A001CF04B /* SceneDelegate.swift in Sources */,
 				BAE5ADD02582EFBA004CB726 /* SearchResult.swift in Sources */,
+				BAE5ADEE25847A50004CB726 /* Nutrition.swift in Sources */,
 				BA7A486A255CA0C3001CF04B /* WeeklyCalendarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
