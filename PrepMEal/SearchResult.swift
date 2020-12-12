@@ -11,26 +11,18 @@ struct Result: Codable {
     var results = [Recipes]()
 }
 
-struct Recipes:Codable, CustomStringConvertible {
-    var description: String {
-        return "Recipe Name: \(title), Recipe URL: \(sourceUrl), Nutrition info: \(nutrition)"
-    }
+struct Recipes:Codable{
+//    var description: String {
+//        return "Recipe Name: \(title), Recipe URL: \(sourceUrl), Calorie info: \(nutrition)"
+//    }
     var title:String
     var sourceUrl:String
-    var nutrition:Nutrition
-}
-
-struct Nutrition: Codable, CustomStringConvertible {
-    var description: String {
-        return "\(nutrients)"
+    struct Nutrition: Codable {
+        struct Nutrients: Codable{
+            let amount:Double
+            let unit:String
+        }
+        let nutrients:[Nutrients]
     }
-    var nutrients:[Nutrients]
-}
-
-struct Nutrients: Codable, CustomStringConvertible {
-    var description: String {
-        return "Calories: \(amount) \(unit)"
-    }
-    var amount:Double
-    var unit:String
+    let nutrition:Nutrition
 }

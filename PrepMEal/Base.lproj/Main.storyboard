@@ -31,36 +31,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2R-if-meA">
-                                            <rect key="frame" x="20" y="11" width="177" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euw-j6-JgD">
+                                            <rect key="frame" x="332" y="11.5" width="62" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euw-j6-JgD">
-                                            <rect key="frame" x="226" y="11" width="168" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="168" id="JgQ-lb-5wU"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2R-if-meA">
+                                            <rect key="frame" x="20" y="11.5" width="29.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="trailing" secondItem="AUO-nr-YeA" secondAttribute="trailingMargin" id="28Z-MN-umg"/>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="trailing" secondItem="AUO-nr-YeA" secondAttribute="trailingMargin" id="470-uG-9xS"/>
-                                        <constraint firstItem="F2R-if-meA" firstAttribute="leading" secondItem="AUO-nr-YeA" secondAttribute="leadingMargin" id="68W-iR-8fY"/>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="leading" secondItem="F2R-if-meA" secondAttribute="trailing" constant="29" id="B0s-we-Vw5"/>
-                                        <constraint firstAttribute="trailing" secondItem="Euw-j6-JgD" secondAttribute="trailing" constant="20" id="ItA-Od-tYk"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="F2R-if-meA" secondAttribute="bottom" constant="0.5" id="KWy-vV-N2a"/>
-                                        <constraint firstItem="F2R-if-meA" firstAttribute="top" secondItem="AUO-nr-YeA" secondAttribute="topMargin" id="LLP-gP-BxR"/>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="leading" secondItem="F2R-if-meA" secondAttribute="trailing" constant="29" id="LwL-5B-lFI"/>
-                                        <constraint firstAttribute="bottom" secondItem="Euw-j6-JgD" secondAttribute="bottom" constant="11.5" id="PBO-rC-XlJ"/>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="top" secondItem="AUO-nr-YeA" secondAttribute="top" constant="11" id="guH-jM-f7z"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Euw-j6-JgD" secondAttribute="bottom" constant="0.5" id="jvE-Q5-o4r"/>
-                                        <constraint firstItem="F2R-if-meA" firstAttribute="leading" secondItem="AUO-nr-YeA" secondAttribute="leadingMargin" id="nw9-cP-gL6"/>
-                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="top" secondItem="AUO-nr-YeA" secondAttribute="topMargin" id="uJ0-Wz-Opm"/>
+                                        <constraint firstItem="F2R-if-meA" firstAttribute="centerY" secondItem="AUO-nr-YeA" secondAttribute="centerY" id="9Ne-F3-u8g"/>
+                                        <constraint firstAttribute="trailing" secondItem="Euw-j6-JgD" secondAttribute="trailing" constant="20" id="Sdy-L8-Nf3"/>
+                                        <constraint firstItem="F2R-if-meA" firstAttribute="leading" secondItem="AUO-nr-YeA" secondAttribute="leading" constant="20" id="WN9-VW-kYd"/>
+                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="centerY" secondItem="AUO-nr-YeA" secondAttribute="centerY" id="cwK-yN-RFk"/>
+                                        <constraint firstItem="Euw-j6-JgD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F2R-if-meA" secondAttribute="trailing" constant="8" symbolic="YES" id="gQI-3e-1H9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -80,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqe-VY-Ssc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="631.8840579710145" y="33.482142857142854"/>
+            <point key="canvasLocation" x="630.43478260869574" y="33.482142857142854"/>
         </scene>
         <!--Day Item View Controller-->
         <scene sceneID="5Bj-VE-owq">
@@ -90,16 +79,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Image, Title, URL, Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-qt-R1f">
-                                <rect key="frame" x="79" y="438" width="257" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Image, Title, URL, Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-qt-R1f">
+                                <rect key="frame" x="78.5" y="437.5" width="257" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-0J-M7N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-0J-M7N">
                                 <rect key="frame" x="154" y="116" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search Recipes"/>
                                 <connections>
                                     <segue destination="2Jy-Pr-8fh" kind="show" id="igq-cf-8B6"/>
@@ -108,6 +95,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cme-Rf-Rkg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" constant="154" id="6kE-nr-DaU"/>
+                            <constraint firstItem="c4c-qt-R1f" firstAttribute="centerY" secondItem="tit-Ja-XcL" secondAttribute="centerY" id="ITy-7D-JDS"/>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="cme-Rf-Rkg" secondAttribute="top" constant="28" id="WnD-6z-vRN"/>
+                            <constraint firstItem="cme-Rf-Rkg" firstAttribute="trailing" secondItem="XTG-0J-M7N" secondAttribute="trailing" constant="154" id="tm4-87-EYO"/>
+                            <constraint firstItem="c4c-qt-R1f" firstAttribute="centerX" secondItem="tit-Ja-XcL" secondAttribute="centerX" id="vnf-FS-upF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fQG-Lc-Uqb"/>
                 </viewController>

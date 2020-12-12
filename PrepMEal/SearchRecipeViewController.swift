@@ -115,9 +115,9 @@ extension SearchRecipeViewController: UITableViewDelegate,
             return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
-//            let searchResult = searchResults[indexPath.row]
-//            cell.recipeNameLabel.text = searchResults
-//            cell.calorieLabel.text = searchResults
+            let searchResult = searchResults[indexPath.row]
+            cell.recipeNameLabel.text = searchResult.title
+            cell.calorieLabel.text = "\(String(searchResult.nutrition.nutrients[0].amount)) \(searchResult.nutrition.nutrients[0].unit)"
             return cell
         }
     }
