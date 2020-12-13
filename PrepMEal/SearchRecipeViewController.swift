@@ -13,6 +13,7 @@ class SearchRecipeViewController: UIViewController {
         struct CellIdentifiers {
             static let searchResultCell = "SearchResultCell"
             static let nothingFoundCell = "NothingFoundCell"
+            static let loadingCell = "LoadingCell"
         }
     }
     
@@ -23,6 +24,8 @@ class SearchRecipeViewController: UIViewController {
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
                 tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -30,11 +33,13 @@ class SearchRecipeViewController: UIViewController {
     
     var searchResults = [Recipes]()
     var hasSearched = false
+    var isLoading = false
+    var dataTask: URLSessionDataTask?
     
     //MARK:- Helper Methods
     func recipesURL(searchText: String) -> URL {
         let urlString = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        let apiURL = "https://api.spoonacular.com/recipes/complexSearch?query=\(urlString)&maxCalories=10000&addRecipeInformation=true&apiKey=29bb9b72616d4ed095d7339111a413bb&fbclid=IwAR0nj2ZGq68yIS6BRZRjPUEO4MeJZIKHoFy5u4gbdsAu0H5ywq_aMYWUzt4"
+        let apiURL = "https://api.spoonacular.com/recipes/complexSearch?query=\(urlString)&maxCalories=10000&addRecipeInformation=true&apiKey=dbedb221887542bdbd0cf942f9374988"
         let url = URL(string: apiURL)
         return url!
     }
@@ -64,61 +69,76 @@ extension SearchRecipeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty{
             searchBar.resignFirstResponder()
+            dataTask?.cancel()
+            isLoading = true
+            tableView.reloadData()
             
             hasSearched = true
             searchResults = []
             
             let url = recipesURL(searchText: searchBar.text!)
-            
-            print("URL: '\(url)'")
-            
-            if let data = searchRequest(with: url) {
-                searchResults = parse(data: data)
-//                let results = parse(data: data)
-                print("Got results: \(searchResults)")
-            }
-
-//            URLSession.shared.dataTask(with: (url)) { data, response, error in
-//                if error == nil && data != nil {
-//                    if let data = data {
-//                        let recipeSearchEntry = try? JSONDecoder().decode(Result.self, from: data)
-//
-//                        print(recipeSearchEntry ?? "Parse Failed")
-////                        searchResults = recipeSearchEntry
-//                    }
-//                }
-//            }.resume()
-            
+            let session = URLSession.shared
+            dataTask = session.dataTask(with: url, completionHandler: { data, response, error in
+                if let error = error as NSError?, error.code == -999{
+                    return
+//                    print("Failure! \(error.localizedDescription)")
+                } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        DispatchQueue.main.async {
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
+                } else {
+                    print("Failure! \(response!)")
+                }
+                DispatchQueue.main.async {
+                  self.hasSearched = false
+                  self.isLoading = false
+                  self.tableView.reloadData()
+                }
+            })
+            dataTask?.resume()
+ 
             tableView.reloadData()
         }
-        print("The search text is: '\(searchBar.text!)'")
-        print("Search Results is: '\(searchResults)'")
+//        print("The search text is: '\(searchBar.text!)'")
+//        print("Search Results is: '\(searchResults)'")
     }
 }
 
 extension SearchRecipeViewController: UITableViewDelegate,
                                       UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if !hasSearched {
+        if isLoading {
+            return 1
+        } else if !hasSearched {
             return 0
         } else if searchResults.count == 0 {
             return 1
         } else {
             return searchResults.count
-        }
+          }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
-
-        if searchResults.count == 0 {
-            return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
-            let searchResult = searchResults[indexPath.row]
-            cell.recipeNameLabel.text = searchResult.title
-            cell.calorieLabel.text = "\(String(searchResult.nutrition.nutrients[0].amount)) \(searchResult.nutrition.nutrients[0].unit)"
+        if isLoading {
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.loadingCell, for: indexPath)
+            let spinner = cell.viewWithTag(100) as! UIActivityIndicatorView
+            spinner.startAnimating()
             return cell
+        } else {
+            if searchResults.count == 0 {
+                return tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.nothingFoundCell, for: indexPath)
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
+                let searchResult = searchResults[indexPath.row]
+                cell.recipeNameLabel.text = searchResult.title
+                cell.calorieLabel.text = "\(String(searchResult.nutrition.nutrients[0].amount)) \(searchResult.nutrition.nutrients[0].unit)"
+                return cell
+            }
         }
     }
     
@@ -127,7 +147,7 @@ extension SearchRecipeViewController: UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if searchResults.count == 0 {
+        if searchResults.count == 0 || isLoading {
             return nil
         } else {
             return indexPath

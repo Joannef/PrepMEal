@@ -20,6 +20,7 @@
 		BAE5ADD625841C9E004CB726 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */; };
 		BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */; };
 		BAE5ADEE25847A50004CB726 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADED25847A50004CB726 /* Nutrition.swift */; };
+		BAE5AE132585A69C004CB726 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5AE122585A69C004CB726 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		BAE5ADED25847A50004CB726 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		BAE5AE122585A69C004CB726 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				BA7A485A255C7E6A001CF04B /* Main.storyboard */,
 				BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */,
 				BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */,
+				BAE5AE122585A69C004CB726 /* LoadingCell.xib */,
 				BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */,
 				BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */,
 				BAE5ADD22582F603004CB726 /* SearchResultCell.xib */,
@@ -147,6 +150,7 @@
 			files = (
 				BA7A4861255C7E6F001CF04B /* LaunchScreen.storyboard in Resources */,
 				BA7A485E255C7E6F001CF04B /* Assets.xcassets in Resources */,
+				BAE5AE132585A69C004CB726 /* LoadingCell.xib in Resources */,
 				BAE5ADD32582F603004CB726 /* SearchResultCell.xib in Resources */,
 				BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */,
 				BA7A485C255C7E6A001CF04B /* Main.storyboard in Resources */,

@@ -26,5 +26,4 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-
 }
