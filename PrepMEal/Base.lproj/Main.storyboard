@@ -79,14 +79,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Image, Title, URL, Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-qt-R1f">
-                                <rect key="frame" x="78.5" y="437.5" width="257" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-J5-JvJ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-0J-M7N">
-                                <rect key="frame" x="154" y="116" width="106" height="30"/>
+                                <rect key="frame" x="154" y="102" width="106" height="30"/>
                                 <state key="normal" title="Search Recipes"/>
                                 <connections>
                                     <segue destination="2Jy-Pr-8fh" kind="show" id="igq-cf-8B6"/>
@@ -96,18 +94,20 @@
                         <viewLayoutGuide key="safeArea" id="cme-Rf-Rkg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" id="5Ru-eT-Kaz"/>
                             <constraint firstItem="XTG-0J-M7N" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" constant="154" id="6kE-nr-DaU"/>
-                            <constraint firstItem="c4c-qt-R1f" firstAttribute="centerY" secondItem="tit-Ja-XcL" secondAttribute="centerY" id="ITy-7D-JDS"/>
-                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="cme-Rf-Rkg" secondAttribute="top" constant="28" id="WnD-6z-vRN"/>
+                            <constraint firstAttribute="bottom" secondItem="s9F-J5-JvJ" secondAttribute="bottom" id="IVF-ms-bqI"/>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="top" secondItem="XTG-0J-M7N" secondAttribute="bottom" constant="8" symbolic="YES" id="K6c-1S-W8S"/>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="trailing" secondItem="cme-Rf-Rkg" secondAttribute="trailing" id="WUB-c7-SIs"/>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="cme-Rf-Rkg" secondAttribute="top" constant="14" id="lp1-LS-un4"/>
                             <constraint firstItem="cme-Rf-Rkg" firstAttribute="trailing" secondItem="XTG-0J-M7N" secondAttribute="trailing" constant="154" id="tm4-87-EYO"/>
-                            <constraint firstItem="c4c-qt-R1f" firstAttribute="centerX" secondItem="tit-Ja-XcL" secondAttribute="centerX" id="vnf-FS-upF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fQG-Lc-Uqb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mw-SM-kWI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="33"/>
+            <point key="canvasLocation" x="1521.7391304347827" y="32.8125"/>
         </scene>
         <!--Search Recipe View Controller-->
         <scene sceneID="Zvd-SV-qZy">

@@ -21,6 +21,7 @@
 		BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */; };
 		BAE5ADEE25847A50004CB726 /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADED25847A50004CB726 /* Nutrition.swift */; };
 		BAE5AE132585A69C004CB726 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5AE122585A69C004CB726 /* LoadingCell.xib */; };
+		BAE5AE162585C04B004CB726 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5AE152585C04B004CB726 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		BAE5ADED25847A50004CB726 /* Nutrition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
 		BAE5AE122585A69C004CB726 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		BAE5AE152585C04B004CB726 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				BAE5AE122585A69C004CB726 /* LoadingCell.xib */,
 				BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */,
 				BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */,
+				BAE5AE152585C04B004CB726 /* UIImageView.swift */,
 				BAE5ADD22582F603004CB726 /* SearchResultCell.xib */,
 				BAE5ADCF2582EFBA004CB726 /* SearchResult.swift */,
 				BA7A485D255C7E6F001CF04B /* Assets.xcassets */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAE5ADD625841C9E004CB726 /* SearchResultCell.swift in Sources */,
+				BAE5AE162585C04B004CB726 /* UIImageView.swift in Sources */,
 				BA7A4859255C7E6A001CF04B /* DayItemViewController.swift in Sources */,
 				BA8B7DDD257869BA00B27F77 /* SearchRecipeViewController.swift in Sources */,
 				BA7A4855255C7E6A001CF04B /* AppDelegate.swift in Sources */,

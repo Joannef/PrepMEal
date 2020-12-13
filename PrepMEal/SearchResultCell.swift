@@ -2,7 +2,6 @@
 //  SearchResultCell.swift
 //  PrepMEal
 //
-//  Created by Joanne Fung on 12/11/20.
 //
 
 import UIKit
@@ -26,4 +25,15 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
+    var downloadTask: URLSessionDownloadTask?
+    
+    //MARK:- Public Method
+    func configure(for result: Recipes) {
+        recipeNameLabel.text = result.title
+        calorieLabel.text = "\(String(result.nutrition.nutrients[0].amount)) \(result.nutrition.nutrients[0].unit)"
+        recipeImage.image = UIImage(named: "Placeholder")
+        if let smallURL = URL(string: result.image) {
+          downloadTask = recipeImage.loadImage(url: smallURL)
+        }
+    }
 }

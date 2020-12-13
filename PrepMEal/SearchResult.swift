@@ -2,7 +2,6 @@
 //  SearchResult.swift
 //  PrepMEal
 //
-//  Created by Joanne Fung on 12/10/20.
 //
 
 import Foundation
@@ -17,6 +16,7 @@ struct Recipes:Codable{
 //    }
     var title:String
     var sourceUrl:String
+    var image:String
     struct Nutrition: Codable {
         struct Nutrients: Codable{
             let amount:Double

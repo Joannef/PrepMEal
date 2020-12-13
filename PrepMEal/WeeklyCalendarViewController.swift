@@ -2,7 +2,6 @@
 //  WeeklyCalendarViewController.swift
 //  PrepMEal
 //
-//  Created by Joanne Fung on 11/11/20.
 //
 
 import UIKit

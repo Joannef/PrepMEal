@@ -2,7 +2,6 @@
 //  SearchRecipeViewController.swift
 //  PrepMEal
 //
-//  Created by Joanne Fung on 12/2/20.
 //
 
 import UIKit
@@ -135,8 +134,7 @@ extension SearchRecipeViewController: UITableViewDelegate,
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
                 let searchResult = searchResults[indexPath.row]
-                cell.recipeNameLabel.text = searchResult.title
-                cell.calorieLabel.text = "\(String(searchResult.nutrition.nutrients[0].amount)) \(searchResult.nutrition.nutrients[0].unit)"
+                cell.configure(for: searchResult)
                 return cell
             }
         }
