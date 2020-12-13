@@ -54,10 +54,5 @@
             </connections>
             <point key="canvasLocation" x="132.60869565217394" y="79.6875"/>
         </tableViewCell>
-        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="y85-PV-SIb">
-            <rect key="frame" x="0.0" y="0.0" width="49" height="31"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="363" y="66"/>
-        </switch>
     </objects>
 </document>
