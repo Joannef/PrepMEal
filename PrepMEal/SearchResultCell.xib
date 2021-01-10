@@ -23,7 +23,10 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipeName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcv-AL-H5T">
-                        <rect key="frame" x="85" y="10" width="102" height="22"/>
+                        <rect key="frame" x="85" y="10" width="280" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="280" id="h4G-35-tf4"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,9 +40,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="54j-7f-CpP" secondAttribute="trailing" constant="20" symbolic="YES" id="0mH-N5-Xni"/>
-                    <constraint firstAttribute="trailing" secondItem="Mcv-AL-H5T" secondAttribute="trailing" constant="188" id="4fF-tm-Swg"/>
                     <constraint firstItem="54j-7f-CpP" firstAttribute="top" secondItem="Mcv-AL-H5T" secondAttribute="bottom" constant="19" id="Ki6-sj-7md"/>
                     <constraint firstAttribute="bottom" secondItem="54j-7f-CpP" secondAttribute="bottom" constant="11" id="MtT-xc-fNs"/>
+                    <constraint firstAttribute="trailing" secondItem="Mcv-AL-H5T" secondAttribute="trailing" constant="10" id="Ot3-an-J0g"/>
                     <constraint firstItem="6YG-Md-NkC" firstAttribute="top" secondItem="Sgq-Oa-jo5" secondAttribute="top" constant="5" id="UdD-Gg-5Q7"/>
                     <constraint firstItem="54j-7f-CpP" firstAttribute="leading" secondItem="6YG-Md-NkC" secondAttribute="trailing" constant="224" id="eIa-x8-RqB"/>
                     <constraint firstItem="Mcv-AL-H5T" firstAttribute="leading" secondItem="6YG-Md-NkC" secondAttribute="trailing" constant="10" id="joR-Z4-l17"/>

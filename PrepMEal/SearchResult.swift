@@ -10,7 +10,7 @@ struct Result: Codable {
     var results = [Recipes]()
 }
 
-struct Recipes:Codable{
+struct Recipes: Codable{
 //    var description: String {
 //        return "Recipe Name: \(title), Recipe URL: \(sourceUrl), Calorie info: \(nutrition)"
 //    }

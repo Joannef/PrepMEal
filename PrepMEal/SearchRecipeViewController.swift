@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SearchRecipeViewController: UIViewController {
     
@@ -22,7 +23,7 @@ class SearchRecipeViewController: UIViewController {
         var cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         cellNib = UINib(nibName: TableView.CellIdentifiers.nothingFoundCell, bundle: nil)
-                tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
+        tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.nothingFoundCell)
         cellNib = UINib(nibName: TableView.CellIdentifiers.loadingCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.loadingCell)
     }
@@ -34,6 +35,7 @@ class SearchRecipeViewController: UIViewController {
     var hasSearched = false
     var isLoading = false
     var dataTask: URLSessionDataTask?
+    var audio: AVAudioPlayer?
     
     //MARK:- Helper Methods
     func recipesURL(searchText: String) -> URL {
@@ -62,11 +64,24 @@ class SearchRecipeViewController: UIViewController {
             return []
         }
     }
+    
+    func notifSound() {
+        let url = Bundle.main.url(forResource: "notification_tune", withExtension: "mp3")
+        
+        do {
+            try audio = AVAudioPlayer(contentsOf: url!)
+        } catch {
+            print(error)
+        }
+        
+        audio?.play()
+    }
 }
 
 extension SearchRecipeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !searchBar.text!.isEmpty{
+            notifSound()
             searchBar.resignFirstResponder()
             dataTask?.cancel()
             isLoading = true
@@ -87,6 +102,7 @@ extension SearchRecipeViewController: UISearchBarDelegate {
                         DispatchQueue.main.async {
                             self.isLoading = false
                             self.tableView.reloadData()
+                            print("Search Results is: \(self.searchResults)")
                         }
                         return
                     }
@@ -104,7 +120,7 @@ extension SearchRecipeViewController: UISearchBarDelegate {
             tableView.reloadData()
         }
 //        print("The search text is: '\(searchBar.text!)'")
-//        print("Search Results is: '\(searchResults)'")
+        
     }
 }
 
@@ -141,7 +157,9 @@ extension SearchRecipeViewController: UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let vc = DayItemViewController(titles: )
         tableView.deselectRow(at: indexPath, animated: true)
+        print(searchResults[indexPath.row].title)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

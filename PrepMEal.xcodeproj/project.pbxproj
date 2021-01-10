@@ -15,6 +15,7 @@
 		BA7A4861255C7E6F001CF04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A485F255C7E6F001CF04B /* LaunchScreen.storyboard */; };
 		BA7A486A255CA0C3001CF04B /* WeeklyCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */; };
 		BA8B7DDD257869BA00B27F77 /* SearchRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */; };
+		BAC67A8925AB84FD00CFBA7F /* notification_tune.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BAC67A8825AB84FD00CFBA7F /* notification_tune.mp3 */; };
 		BAE5ADD02582EFBA004CB726 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADCF2582EFBA004CB726 /* SearchResult.swift */; };
 		BAE5ADD32582F603004CB726 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD22582F603004CB726 /* SearchResultCell.xib */; };
 		BAE5ADD625841C9E004CB726 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */; };
@@ -35,6 +36,7 @@
 		BA7A4862255C7E6F001CF04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCalendarViewController.swift; sourceTree = "<group>"; };
 		BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipeViewController.swift; sourceTree = "<group>"; };
+		BAC67A8825AB84FD00CFBA7F /* notification_tune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification_tune.mp3; sourceTree = "<group>"; };
 		BAE5ADCF2582EFBA004CB726 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		BAE5ADD22582F603004CB726 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		BA7A4853255C7E6A001CF04B /* PrepMEal */ = {
 			isa = PBXGroup;
 			children = (
+				BAC67A8825AB84FD00CFBA7F /* notification_tune.mp3 */,
 				BA7A4854255C7E6A001CF04B /* AppDelegate.swift */,
 				BA7A4856255C7E6A001CF04B /* SceneDelegate.swift */,
 				BA7A4858255C7E6A001CF04B /* DayItemViewController.swift */,
@@ -157,6 +160,7 @@
 				BAE5ADD32582F603004CB726 /* SearchResultCell.xib in Resources */,
 				BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */,
 				BA7A485C255C7E6A001CF04B /* Main.storyboard in Resources */,
+				BAC67A8925AB84FD00CFBA7F /* notification_tune.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
