@@ -10,12 +10,15 @@ class WeeklyItem {
     var day = ""
 }
 
-class WeeklyCalendarViewController: UITableViewController {
+class WeeklyCalendarViewController: UITableViewController, UITextFieldDelegate {
+    @IBOutlet weak var nameTextField: UITextField!
+    
     
     var items = [WeeklyItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameTextField.delegate = self
         
         let item1 = WeeklyItem()
         item1.day = "Sunday"
@@ -46,6 +49,10 @@ class WeeklyCalendarViewController: UITableViewController {
         items.append(item7)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTextField.resignFirstResponder()
+        return true
+    }
 
     // MARK:- Table view data source
     

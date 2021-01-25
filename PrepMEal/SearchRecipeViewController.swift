@@ -157,9 +157,17 @@ extension SearchRecipeViewController: UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = DayItemViewController(titles: )
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DayItemViewController")
+            as? DayItemViewController
+        self.navigationController?.pushViewController(vc!, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
+        vc?.recipeName = searchResults[indexPath.row].title
+        vc?.calorieCount = String(searchResults[indexPath.row].nutrition.nutrients[0].amount)
+        vc?.calorieUnit = searchResults[indexPath.row].nutrition.nutrients[0].unit
+        vc?.recipeImg = searchResults[indexPath.row].image
         print(searchResults[indexPath.row].title)
+        print(vc!.calorieCount, vc!.calorieUnit)
+        print(vc!.recipeImg)
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

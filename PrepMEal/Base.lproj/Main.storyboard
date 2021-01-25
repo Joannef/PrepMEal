@@ -16,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <label key="tableHeaderView" opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tt7-zz-5FN">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" tag="3000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grocery List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KSH-5x-z0j">
-                            <rect key="frame" x="0.0" y="143.5" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -32,7 +25,7 @@
                         </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeeklyItem" id="lGh-gA-PZt">
-                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lGh-gA-PZt" id="AUO-nr-YeA">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -70,9 +63,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="V6h-Qv-gp5">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Weekly View" id="Ife-lw-gWE" userLabel="Weekly View"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="19" id="98b-T1-SR6">
+                            <rect key="frame" x="157" y="5" width="100" height="34"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                        </textField>
                         <barButtonItem key="rightBarButtonItem" title="Clear Week" id="eQq-4q-EdS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="98b-T1-SR6" id="qEi-0V-9GV"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqe-VY-Ssc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,33 +84,38 @@
         <!--Day Item View Controller-->
         <scene sceneID="5Bj-VE-owq">
             <objects>
-                <viewController id="L4a-Hw-KGr" customClass="DayItemViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DayItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L4a-Hw-KGr" customClass="DayItemViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tit-Ja-XcL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-J5-JvJ">
-                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTG-0J-M7N">
-                                <rect key="frame" x="154" y="102" width="106" height="30"/>
+                                <rect key="frame" x="154" y="815" width="106" height="30"/>
                                 <state key="normal" title="Search Recipes"/>
                                 <connections>
                                     <segue destination="2Jy-Pr-8fh" kind="show" id="igq-cf-8B6"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s9F-J5-JvJ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="L4a-Hw-KGr" id="E3v-jS-gRn"/>
+                                    <outlet property="delegate" destination="L4a-Hw-KGr" id="JH6-b9-ePv"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cme-Rf-Rkg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" id="5Ru-eT-Kaz"/>
-                            <constraint firstItem="XTG-0J-M7N" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" constant="154" id="6kE-nr-DaU"/>
-                            <constraint firstAttribute="bottom" secondItem="s9F-J5-JvJ" secondAttribute="bottom" id="IVF-ms-bqI"/>
-                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="top" secondItem="XTG-0J-M7N" secondAttribute="bottom" constant="8" symbolic="YES" id="K6c-1S-W8S"/>
-                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="trailing" secondItem="cme-Rf-Rkg" secondAttribute="trailing" id="WUB-c7-SIs"/>
-                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="cme-Rf-Rkg" secondAttribute="top" constant="14" id="lp1-LS-un4"/>
-                            <constraint firstItem="cme-Rf-Rkg" firstAttribute="trailing" secondItem="XTG-0J-M7N" secondAttribute="trailing" constant="154" id="tm4-87-EYO"/>
+                            <constraint firstItem="cme-Rf-Rkg" firstAttribute="bottom" secondItem="XTG-0J-M7N" secondAttribute="bottom" constant="17" id="3Qq-px-Hqi"/>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" constant="154" id="cSn-MZ-orV"/>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="s9F-J5-JvJ" secondAttribute="bottom" constant="8" symbolic="YES" id="dK6-5N-ti0"/>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="trailing" secondItem="cme-Rf-Rkg" secondAttribute="trailing" id="hYr-YI-mbv"/>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="leading" secondItem="cme-Rf-Rkg" secondAttribute="leading" id="iAU-0J-4MT"/>
+                            <constraint firstItem="XTG-0J-M7N" firstAttribute="top" secondItem="s9F-J5-JvJ" secondAttribute="bottom" constant="8" symbolic="YES" id="lCl-q4-dg9"/>
+                            <constraint firstItem="cme-Rf-Rkg" firstAttribute="trailing" secondItem="XTG-0J-M7N" secondAttribute="trailing" constant="154" id="sYs-MC-5Kc"/>
+                            <constraint firstItem="s9F-J5-JvJ" firstAttribute="top" secondItem="cme-Rf-Rkg" secondAttribute="top" id="t0r-Eb-Ma3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fQG-Lc-Uqb"/>
