@@ -22,6 +22,7 @@
 		BAE5ADD92584223A004CB726 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */; };
 		BAE5AE132585A69C004CB726 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE5AE122585A69C004CB726 /* LoadingCell.xib */; };
 		BAE5AE162585C04B004CB726 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE5AE152585C04B004CB726 /* UIImageView.swift */; };
+		BAE705D725BF85F000078472 /* PersistencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE705D625BF85F000078472 /* PersistencyHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		BAE5ADD82584223A004CB726 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		BAE5AE122585A69C004CB726 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		BAE5AE152585C04B004CB726 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		BAE705D625BF85F000078472 /* PersistencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				BA7A4856255C7E6A001CF04B /* SceneDelegate.swift */,
 				BA7A4869255CA0C3001CF04B /* WeeklyCalendarViewController.swift */,
 				BA7A4858255C7E6A001CF04B /* DayItemViewController.swift */,
+				BAE705D625BF85F000078472 /* PersistencyHelper.swift */,
 				BA8B7DDC257869BA00B27F77 /* SearchRecipeViewController.swift */,
 				BAE5ADCF2582EFBA004CB726 /* SearchResult.swift */,
 				BAE5ADD525841C9E004CB726 /* SearchResultCell.swift */,
@@ -172,6 +175,7 @@
 				BAE5AE162585C04B004CB726 /* UIImageView.swift in Sources */,
 				BA7A4859255C7E6A001CF04B /* DayItemViewController.swift in Sources */,
 				BA8B7DDD257869BA00B27F77 /* SearchRecipeViewController.swift in Sources */,
+				BAE705D725BF85F000078472 /* PersistencyHelper.swift in Sources */,
 				BA7A4855255C7E6A001CF04B /* AppDelegate.swift in Sources */,
 				BA7A4857255C7E6A001CF04B /* SceneDelegate.swift in Sources */,
 				BAE5ADD02582EFBA004CB726 /* SearchResult.swift in Sources */,

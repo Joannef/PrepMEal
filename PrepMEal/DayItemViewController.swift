@@ -6,7 +6,7 @@
 
 import UIKit
 
-class selectedResult {
+class selectedResult : Codable{
     var recipe = ""
     var calories = ""
 }
@@ -26,18 +26,28 @@ class DayItemViewController: UIViewController, UITableViewDelegate, UITableViewD
             static let searchResultCell = "SearchResultCell"
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeItems = []
+        recipeItems = [selectedResult]()
+//        recipeItems = PersistencyHelper.loadRecipes()
         let cellNib = UINib(nibName: TableView.CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.searchResultCell)
         print(recipeName, calorieCount, calorieUnit)
+        print(recipeItems)
         print(recipeItems.count)
     }
     
+    func addRecipe(_ recipe:String, calorie:Int){
+        let itemRecipe = selectedResult()
+        itemRecipe.recipe = recipeName
+        itemRecipe.calories = "\(calorieCount) \(calorieUnit)"
+        
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return recipeItems.count/2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
