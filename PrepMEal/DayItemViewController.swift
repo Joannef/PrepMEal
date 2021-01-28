@@ -29,7 +29,6 @@ class DayItemViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsets(top: 54, left: 0, bottom: 0, right: 0)
         let cellNib = UINib(nibName: CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.searchResultCell)
         recipeItems = PersistencyHelper.loadRecipes()
