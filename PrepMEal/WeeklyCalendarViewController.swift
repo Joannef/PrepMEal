@@ -14,7 +14,6 @@ class WeeklyItem {
 class WeeklyCalendarViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     
-    
     var items = [WeeklyItem]()
     var calNum = Int()
 

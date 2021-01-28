@@ -71,7 +71,6 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="name"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="Clear Week" id="eQq-4q-EdS"/>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="98b-T1-SR6" id="qEi-0V-9GV"/>
