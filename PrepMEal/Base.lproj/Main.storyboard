@@ -11,7 +11,7 @@
         <!--Weekly Calendar View Controller-->
         <scene sceneID="Q3q-dp-15D">
             <objects>
-                <tableViewController id="qCv-qR-l5w" customClass="WeeklyCalendarViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="WeeklyCalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qCv-qR-l5w" customClass="WeeklyCalendarViewController" customModule="PrepMEal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Yb-iB-atY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                     <navigationItem key="navigationItem" id="V6h-Qv-gp5">
                         <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Weekly View" id="Ife-lw-gWE" userLabel="Weekly View"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="19" id="98b-T1-SR6">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="19" id="98b-T1-SR6">
                             <rect key="frame" x="157" y="5" width="100" height="34"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

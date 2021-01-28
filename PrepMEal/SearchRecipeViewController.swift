@@ -162,10 +162,10 @@ extension SearchRecipeViewController: UITableViewDelegate,
         tableView.deselectRow(at: indexPath, animated: true)
         self.navigationController?.popViewController(animated: true)
         vc?.recipeName = searchResults[indexPath.row].title
-        vc?.calorieCount = String(searchResults[indexPath.row].nutrition.nutrients[0].amount)
+        vc?.calorieCount = searchResults[indexPath.row].nutrition.nutrients[0].amount
         vc?.calorieUnit = searchResults[indexPath.row].nutrition.nutrients[0].unit
         vc?.recipeImg = searchResults[indexPath.row].image
-        vc?.addRecipe(vc!.recipeName, calorie: "\(vc!.calorieCount) \(vc!.calorieUnit)", image: vc!.recipeImg)
+        vc?.addRecipe(vc!.recipeName, calorie: vc!.calorieCount, unit: vc!.calorieUnit, image: vc!.recipeImg)
         print(vc!.recipeItems)
         print(vc!.recipeItems.count)
         print(vc!.recipeName)

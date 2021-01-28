@@ -8,7 +8,8 @@ import UIKit
 
 class selectedResult : Codable {
     var recipe = ""
-    var calories = ""
+    var calories = Double()
+    var unit = ""
     var image = ""
 }
 
@@ -16,10 +17,11 @@ class DayItemViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
 
     var recipeName = ""
-    var calorieCount = ""
+    var calorieCount = Double()
     var calorieUnit = ""
     var recipeImg = ""
     var downloadTask: URLSessionDownloadTask?
+    var num = Int()
 
     var recipeItems = [selectedResult]()
 
@@ -32,16 +34,27 @@ class DayItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cellNib = UINib(nibName: CellIdentifiers.searchResultCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.searchResultCell)
         recipeItems = PersistencyHelper.loadRecipes()
-        print(recipeName, calorieCount, calorieUnit)
-        print(recipeItems)
+//        print(num)
+//        print(recipeName, calorieCount, calorieUnit)
+//        print(recipeItems)
+        for item in recipeItems {
+            num += Int(item.calories)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "WeeklyCalendarViewController")
+                as? WeeklyCalendarViewController
+            vc?.calNum = num
+            print("calNum is \(vc!.calNum)")
+            print("\(item.recipe) \(item.calories) \(item.unit)")
+            print(num)
+        }
         print(recipeItems.count)
     }
         
-    func addRecipe(_ recipe:String, calorie:String, image: String){
+    func addRecipe(_ recipe:String, calorie:Double, unit:String, image: String){
         let item = selectedResult()
         item.recipe = recipe
         item.calories = calorie
         item.image = image
+        item.unit = unit
         
         var recipes = PersistencyHelper.loadRecipes()
         recipes.append(item)
@@ -59,7 +72,7 @@ class DayItemViewController: UIViewController, UITableViewDelegate, UITableViewD
         let calorieLabel = cell.viewWithTag(4000) as! UILabel
         let imageView = cell.viewWithTag(5000) as! UIImageView
         nameLabel.text = recipeItem.recipe
-        calorieLabel.text = recipeItem.calories
+        calorieLabel.text = String(recipeItem.calories)
         let url = URL(string: recipeItem.image)
         imageView.image = UIImage(named: "Placeholder")
         downloadTask = imageView.loadImage(url: url!)
