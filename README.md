@@ -1,6 +1,6 @@
 # PrepMEal
 
-iOS Development Project
+CSCI 39597 iOS Development Project
 
 The vision of this project was to create an ios app that helps set daily meal plans or meal preps weekly for people. 
 The main feature of the app is that recipes are searchable from a recipe api called spoonacular and users can add the recipes to their weekly list of recipes.
